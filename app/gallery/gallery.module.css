@@ -1,0 +1,136 @@
+/* Gallery photo layout */
+.grid {
+  gap: 18px;
+}
+
+.tile {
+  padding: 0;
+  background: #07111e;
+  border-color: rgba(197, 164, 109, 0.34);
+}
+
+/* Remove the old decorative circles so they do not cover the photograph. */
+.tile::before,
+.tile::after {
+  content: none !important;
+}
+
+.image,
+.placeholder,
+.shade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.image {
+  z-index: 0;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.placeholder {
+  z-index: 0;
+  background:
+    radial-gradient(
+      circle at 88% 88%,
+      transparent 0 16%,
+      rgba(197, 164, 109, 0.28) 16.2% 16.5%,
+      transparent 16.7% 25%,
+      rgba(197, 164, 109, 0.07) 25.2% 38%,
+      transparent 38.2%
+    ),
+    linear-gradient(145deg, #101f33, #07111e 72%);
+}
+
+.shade {
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(5, 13, 24, 0.18) 0%, rgba(5, 13, 24, 0.08) 30%),
+    linear-gradient(0deg, rgba(5, 13, 24, 0.96) 0%, rgba(5, 13, 24, 0.62) 38%, transparent 72%);
+  pointer-events: none;
+}
+
+.content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 27px;
+}
+
+.code {
+  color: #dcb567;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+.copy {
+  max-width: 520px;
+  margin-top: auto;
+}
+
+.tile .copy h3 {
+  position: static;
+  max-width: 520px;
+  margin: 0;
+  color: #f4f0e8;
+  font-family: var(--font-serif);
+  font-size: clamp(30px, 3vw, 42px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.tile:nth-child(1) .copy h3,
+.tile:nth-child(7) .copy h3 {
+  font-size: clamp(38px, 4vw, 56px);
+}
+
+.tile .copy p {
+  position: static;
+  margin: 12px 0 0;
+  color: #d4dbe4;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+@media (hover: hover) {
+  .tile:hover .image {
+    transform: scale(1.045);
+  }
+}
+
+@media (max-width: 640px) {
+  .content {
+    padding: 24px;
+  }
+
+  .tile .copy h3,
+  .tile:nth-child(1) .copy h3,
+  .tile:nth-child(7) .copy h3 {
+    font-size: 33px;
+  }
+
+  .tile .copy p {
+    margin-top: 10px;
+    font-size: 13px;
+  }
+}
+/* Menggeser wajah ke atas agar tidak tertutup teks */
+.tile:nth-child(7) .image {
+  object-position: center 80%;
+}
+
+.tile:nth-child(9) .image {
+  object-position: center 80%;
+}
