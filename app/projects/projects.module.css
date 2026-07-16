@@ -1,0 +1,73 @@
+.heroSection {
+  background: var(--paper);
+  padding-block: clamp(76px, 7vw, 108px);
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
+  align-items: end;
+  gap: clamp(48px, 8vw, 120px);
+}
+
+.heroGrid > * {
+  min-width: 0;
+}
+
+.heroGrid :global(.page-title) {
+  max-width: 14ch;
+  font-size: clamp(3.25rem, 4.8vw, 4.75rem) !important;
+  line-height: 0.98 !important;
+  letter-spacing: -0.045em !important;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.heroGrid :global(.lead) {
+  max-width: 34rem;
+  margin: 0 0 0.35rem;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.15rem) !important;
+  line-height: 1.7 !important;
+}
+
+.listSection {
+  padding-top: 0;
+}
+
+.cardsGrid :global(.journey-card h3) {
+  font-size: clamp(1.6rem, 1.4rem + 0.7vw, 2rem) !important;
+  line-height: 1.15 !important;
+}
+
+.cardsGrid :global(.journey-card p) {
+  font-size: clamp(0.95rem, 0.91rem + 0.16vw, 1.04rem) !important;
+  line-height: 1.72 !important;
+}
+
+@media (max-width: 900px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 28px;
+  }
+
+  .heroGrid :global(.page-title) {
+    max-width: 15ch;
+  }
+
+  .heroGrid :global(.lead) {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .heroGrid :global(.page-title) {
+    max-width: 12ch;
+    font-size: clamp(2.65rem, 11vw, 3.5rem) !important;
+    line-height: 1 !important;
+  }
+
+  .listSection {
+    padding-bottom: 72px;
+  }
+}
