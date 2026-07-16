@@ -9,7 +9,7 @@ export function Footer() {
         <div className="footer-lead">
           <p className="eyebrow light">Open to meaningful conversations</p>
           <h2>Let&apos;s build something worth remembering.</h2>
-          <Link className="text-link light-link" href={`mailto:${site.email}`}>
+          <Link className="text-link light-link" href="/contact#contact-form">
             Start a conversation <ArrowUpRight size={18} aria-hidden="true" />
           </Link>
         </div>
@@ -17,7 +17,7 @@ export function Footer() {
         <div className="footer-contact">
           <div>
             <Mail size={18} aria-hidden="true" />
-            <a href={`mailto:${site.email}`}>{site.email}</a>
+            <Link href="/contact#contact-form">{site.email}</Link>
           </div>
           <div>
             <MapPin size={18} aria-hidden="true" />
@@ -33,6 +33,7 @@ export function Footer() {
           ))}
         </div>
       </div>
+
       <div className="shell footer-bottom">
         <span>© {new Date().getFullYear()} Muhammad Irsyad Kemal Pasha Ramadhan</span>
         <span>Built around growth, collaboration, and impact.</span>

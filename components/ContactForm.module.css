@@ -1,0 +1,37 @@
+.honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.statusArea {
+  min-height: 42px;
+}
+
+.status {
+  margin: 18px 0 0;
+  padding: 12px 14px;
+  border: 1px solid currentColor;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.success {
+  color: #235b43;
+  background: #edf8f1;
+}
+
+.error {
+  color: #8b2f2f;
+  background: #fff1f1;
+}
+
+.local {
+  color: #75500e;
+  background: #fff8e7;
+}
