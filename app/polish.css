@@ -5249,3 +5249,82 @@ select {
     font-size: 1.65rem !important;
   }
 }
+
+/* ==================================================
+   JOURNEY TIMELINE - BALANCED TYPE & CLEAR YEAR RAIL
+================================================== */
+
+.journey-timeline-section .timeline {
+  --journey-rail-x: 132px;
+}
+
+.journey-timeline-section .timeline::before {
+  left: var(--journey-rail-x);
+}
+
+.journey-timeline-section .timeline-year {
+  grid-template-columns: 176px minmax(0, 1fr);
+  gap: clamp(36px, 4vw, 64px);
+}
+
+.journey-timeline-section .timeline-year-label {
+  width: 100%;
+  padding-right: 44px;
+  font-size: clamp(2.1rem, 1.9rem + 1vw, 2.6rem) !important;
+  line-height: 1 !important;
+  white-space: nowrap;
+}
+
+.journey-timeline-section .timeline-year-label::after {
+  top: 50%;
+  left: calc(var(--journey-rail-x) - 8px);
+  transform: translateY(-50%);
+}
+
+.journey-timeline-section .timeline-intro h2 {
+  font-size: clamp(2.45rem, 2.1rem + 1.6vw, 3.35rem) !important;
+  line-height: 1.06 !important;
+}
+
+.journey-timeline-section .timeline-link h3 {
+  font-size: clamp(1.55rem, 1.4rem + 0.65vw, 1.9rem) !important;
+  line-height: 1.18 !important;
+}
+
+.journey-timeline-section .timeline-intro > p,
+.journey-timeline-section .timeline-link p {
+  font-size: clamp(0.95rem, 0.9rem + 0.15vw, 1rem) !important;
+}
+
+.journey-timeline-section .timeline-link > span {
+  font-size: 0.75rem;
+}
+
+@media (max-width: 800px) {
+  .journey-timeline-section .timeline {
+    --journey-rail-x: 6px;
+  }
+
+  .journey-timeline-section .timeline-year {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-left: 30px;
+  }
+
+  .journey-timeline-section .timeline-year-label {
+    padding-right: 0;
+    font-size: 2.1rem !important;
+  }
+
+  .journey-timeline-section .timeline-year-label::after {
+    left: -32px;
+  }
+
+  .journey-timeline-section .timeline-intro h2 {
+    font-size: clamp(2.1rem, 8.5vw, 2.75rem) !important;
+  }
+
+  .journey-timeline-section .timeline-link h3 {
+    font-size: clamp(1.4rem, 6vw, 1.65rem) !important;
+  }
+}
